@@ -1,0 +1,133 @@
+@startuml
+
+skinparam SequenceGroupBodyBackgroundColor transparent 
+skinparam ParticipantPadding 0
+skinparam BoxPadding 10
+skinparam shadowing false
+skinparam roundcorner 20
+skinparam BackgroundColor #ffffff
+skinparam ArrowColor #Black
+
+
+
+skinparam default {
+    BackgroundColor #ffffff
+    BackgroundColor<<SCA>> #LightGreen
+    BackgroundColor<<External>> #Orange
+    BorderColor #Black
+}
+
+skinparam SequenceBox {
+    'BackgroundColor #LightBlue
+    BackgroundColor<<SCA>> #LightGreen
+    BackgroundColor<<External>> #LightOrange
+    BorderColor #Black
+}
+
+skinparam Note {
+    BackgroundColor #GOLD
+    BorderColor #Black
+    FontColor #Black
+}
+
+skinparam Actor {
+    BackgroundColor #ffffff
+    BackgroundColor<<SCA>> #LightGreen
+    BackgroundColor<<External>> #LightOrange
+    BorderColor #Black
+}
+
+skinparam Node {
+    BackgroundColor #ffffff
+    BackgroundColor<<SCA>> #LightGreen
+    BackgroundColor<<External>> #Orange
+
+    BorderColor #Black
+}
+
+skinparam Component {
+    BackgroundColor #007ac9
+    BackgroundColor<<SCA>> #DarkGreen
+    BackgroundColor<<External>> #Orange
+    
+    BorderColor #Black
+    FontColor #ffffff
+}
+
+skinparam  Activity {
+    BackgroundColor #007ac9
+    BackgroundColor<<SCA>> #LightGreen
+    BackgroundColor<<External>> #Orange
+
+    DiamondBackgroundColor #007ac9
+    DiamondBackgroundColor<<SCA>> #LightGreen
+    DiamondBackgroundColor<<External>> #Orange
+
+    BorderColor #Black
+    FontColor #ffffff
+    DiamondBorderColor  #Black
+    DiamondFontColor #ffffff
+
+}
+
+skinparam Interface {
+    BackgroundColor #ffffff
+    BackgroundColor<<SCA>> #LightGreen
+    BackgroundColor<<External>> #Orange
+
+    BorderColor #Black
+}
+skinparam Usecase {
+    BackgroundColor #ffffff
+    BorderColor #Black
+}
+
+skinparam Rectangle {
+    BackgroundColor #ffffff
+    BackgroundColor<<SCA>> #LightGreen
+    BackgroundColor<<External>> #Orange
+
+    BorderColor #Black
+}
+
+skinparam Partition {
+    BackgroundColor #LightBlue
+    BackgroundColor<<SCA>> #LightGreen
+    BackgroundColor<<External>> #Orange
+    
+}
+skinparam Package {
+    BackgroundColor #ffffff
+    BackgroundColor<<SCA>> #LightGreen
+    BackgroundColor<<External>> #Orange
+
+    BorderColor #Black
+}
+
+skinparam Queue {
+    BackgroundColor #ffffff
+    BorderColor #Black
+}
+
+skinparam Database {
+    BackgroundColor #ffffff
+    BackgroundColor<<SCA>> #DarkGreen
+    BackgroundColor<<External>> #Orange
+
+    BorderColor #Black
+}
+
+skinparam Participant {
+    BackgroundColor #007ac9
+    BackgroundColor<<SCA>> #DarkGreen
+    BackgroundColor<<External>> #Orange
+
+    BorderColor #Black
+    FontColor #ffffff
+}
+
+skinparam Sequence {
+    LifeLineBorderColor #007ac9
+}
+
+@enduml

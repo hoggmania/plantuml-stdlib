@@ -1,0 +1,24 @@
+@startuml
+
+!pragma teoz true
+
+
+!definelong ReqResp(px, py, req, resp)
+px -> py +: req
+py -> px -: resp
+!enddefinelong
+
+
+!definelong ReqProxy(px, py, pz, req, resp)
+px <-> py : req
+&py <-> pz : <proxy to service>
+/'  if no teoz available
+ReqResp(px, py, req, resp)
+px -> py +: req
+py -> pz +: <proxying>
+pz -> py -: resp
+py -> px -: resp
+'/
+!enddefinelong
+
+@enduml
