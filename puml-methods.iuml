@@ -11,7 +11,7 @@ py -> px -: resp
 
 !definelong ReqProxy(px, py, pz, req, resp)
 px <-> py : req
-&py <-> pz : <proxy to service>
+&py <-> pz : <proxy to service>::resp
 
 /'  if no teoz available
 ReqResp(px, py, req, resp)
