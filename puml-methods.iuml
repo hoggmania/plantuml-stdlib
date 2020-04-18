@@ -16,7 +16,14 @@ px <-> py : req::resp
 
 
 !definelong ReqProxy4(pw, px, py, pz, req, resp)
-pw <-> py : req::resp
+pw <-> px : req::resp
+&px <-> py : <proxying> req::resp
+&py <-> pz : <proxying> req::resp
+!enddefinelong
+
+!definelong ReqProxy5(pu, pw, px, py, pz, req, resp)
+pu <-> pw : req::resp
+&pw <-> px : <proxying> req::resp
 &px <-> py : <proxying> req::resp
 &py <-> pz : <proxying> req::resp
 !enddefinelong
