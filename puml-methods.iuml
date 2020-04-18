@@ -12,21 +12,15 @@ py -> px -: resp
 !definelong ReqProxy(px, py, pz, req, resp)
 px <-> py : req::resp
 &py <-> pz : <proxying> req::resp
+!enddefinelong
 
 
 !definelong ReqProxy4(pw, px, py, pz, req, resp)
 pw <-> py : req::resp
 &px <-> py : <proxying> req::resp
 &py <-> pz : <proxying> req::resp
-
-/'  if no teoz available
-ReqResp(px, py, req, resp)
-px -> py +: req
-py -> pz +: <proxying> req
-pz -> py -: resp
-py -> px -: resp
-'/
 !enddefinelong
+
 
 
 !definelong Redirect(x, y, z, req, resp)
@@ -35,5 +29,19 @@ y -> y : generate resp
 y -> x -: redirect(resp)
 x -> z +: redirect(resp)
 !enddefinelong
+
+
+
+/'  if no teoz available
+ReqResp(px, py, req, resp)
+px -> py +: req
+py -> pz +: <proxying> req
+pz -> py -: resp
+py -> px -: resp
+'/
+
+
+
+
 
 @enduml
