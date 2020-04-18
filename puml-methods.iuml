@@ -13,6 +13,12 @@ py -> px -: resp
 px <-> py : req::resp
 &py <-> pz : <proxying> req::resp
 
+
+!definelong ReqProxy4(pw, px, py, pz, req, resp)
+pw <-> py : req::resp
+&px <-> py : <proxying> req::resp
+&py <-> pz : <proxying> req::resp
+
 /'  if no teoz available
 ReqResp(px, py, req, resp)
 px -> py +: req
