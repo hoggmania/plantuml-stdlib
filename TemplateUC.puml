@@ -1,0 +1,179 @@
+@startuml TemplateUC
+!includesub TemplateBase.puml!BasicSettings
+!includesub TemplateBase.puml!CheckerCharacters
+
+setDirection(horizontal)
+setBackgroundColor(white)
+
+skinparam usecase {
+    BackgroundColor White
+	BorderColor RoyalBlue
+    ArrowColor Black
+}
+
+skinparam actor {
+    BackgroundColor White
+    
+    BorderColor RoyalBlue
+    BorderColor<<primary>> #FF2C24
+    BorderColor<<secondary>> #FF9924
+}
+
+hide stereotype 
+
+' declarations
+!unquoted function actor( $name, $var, $type = "normal" )
+    !if ( $type == "normal")
+        actor :$name: as $var
+    !endif
+    !if ($type == "primary")
+        actor :$name: as $var <<primary>>
+    !endif
+    !if ($type == "secondary")
+        actor :$name: as $var <<secondary>>
+    !endif
+!endfunction
+
+!unquoted function uc( $name, $var )
+    usecase ($name) as $var
+!endfunction
+
+' relations
+!unquoted function association( $first, $second, $line = "-", $swap = "false" )
+    !if ( checkCharactersExceptSimpleLine($line) == "true" )
+        !assert %false() : "The only recognized character is: -"
+    !endif
+    checkBooleanVariable($swap,"swap")
+
+    !if ($swap =="false")
+        $first $line $second
+    !endif
+    !if ($swap =="true")
+        $second $line $first
+    !endif
+!endfunction
+
+!unquoted function generalization( $father, $child, $line = "-", $swap = "false", $whosTheFather = 1 )
+    !if ( checkCharactersExceptSimpleLine($line) == "true" )
+        !assert %false() : "The only recognized characters is: -"
+    !endif
+    !if ( (%not( $whosTheFather == 1 )) && (%not( $whosTheFather == 2 )) )
+        !assert %false() : "Invalid father selection argument"
+    !endif
+    checkBooleanVariable($swap,"swap")
+
+    !if ( $whosTheFather == 1 )
+        !if ( $swap == "false" )
+            $father <|$line $child
+        !endif
+        !if ( $swap == "true" )
+            $child $line|> $father
+        !endif
+    !endif
+    !if ( $whosTheFather == 2 )
+        !if ( $swap == "false" )
+            $father $line|> $child
+        !endif
+        !if ( $swap == "true" )
+            $child <|$line $father
+        !endif
+    !endif
+!endfunction
+
+!unquoted function include( $first, $second, $line = ".", $swap = "false", $whoStarts = 1, $needSpace = "false" )
+    !if ( checkCharactersExceptDot($line) == "true" )
+        !assert %false() : "The only recognized characters is: ."
+    !endif
+    !if ( (%not( $whoStarts == 1 )) && (%not( $whoStarts == 2 )) )
+        !assert %false() : "Invalid include argument"
+    !endif
+    checkBooleanVariable($swap,"swap")
+    checkBooleanVariable($needSpace,"space")
+
+    !if ( $needSpace == "false" )
+        !if ( $whoStarts == 1 )
+            !if ( $swap == "false" )
+                $first $line> $second : include
+            !endif
+            !if ( $swap == "true" )
+                $second <$line $first : include
+            !endif
+        !endif
+        !if ( $whoStarts == 2 )
+            !if ( $swap == "false" )
+                $first <$line $second : include
+            !endif
+            !if ( $swap == "true" )
+                $second $line> $first : include
+            !endif
+        !endif
+    !endif
+    !if ( $needSpace == "true" )
+        !if ( $whoStarts == 1 )
+            !if ( $swap == "false" )
+                $first $line> $second : \t\t\tinclude
+            !endif
+            !if ( $swap == "true" )
+                $second <$line $first : \t\t\tinclude
+            !endif
+        !endif
+        !if ( $whoStarts == 2 )
+            !if ( $swap == "false" )
+                $first <$line $second : \t\t\tinclude
+            !endif
+            !if ( $swap == "true" )
+                $second $line> $first : \t\t\tinclude
+            !endif
+        !endif
+    !endif
+!endfunction
+
+!unquoted function extend( $first, $second, $line = ".", $swap = "false", $whoStarts = 2, $needSpace = "false" )
+    !if ( checkCharactersExceptDot($line) == "true" )
+        !assert %false() : "The only recognized characters is: ."
+    !endif
+    !if ( (%not( $whoStarts == 1 )) && (%not( $whoStarts == 2 )) )
+        !assert %false() : "Invalid include argument"
+    !endif
+    checkBooleanVariable($swap,"swap")
+    checkBooleanVariable($needSpace,"space")
+
+    !if ( $needSpace == "false" )
+        !if ( $whoStarts == 1 )
+            !if ( $swap == "false" )
+                $first $line> $second : extend
+            !endif
+            !if ( $swap == "true" )
+                $second <$line $first : extend
+            !endif
+        !endif
+        !if ( $whoStarts == 2 )
+            !if ( $swap == "false" )
+                $first <$line $second : extend
+            !endif
+            !if ( $swap == "true" )
+                $second $line> $first : extend
+            !endif
+        !endif
+    !endif
+    !if ( $needSpace == "true" )
+        !if ( $whoStarts == 1 )
+            !if ( $swap == "false" )
+                $first $line> $second : \t\t\textend
+            !endif
+            !if ( $swap == "true" )
+                $second <$line $first : \t\t\textend
+            !endif
+        !endif
+        !if ( $whoStarts == 2 )
+            !if ( $swap == "false" )
+                $first <$line $second : \t\t\textend
+            !endif
+            !if ( $swap == "true" )
+                $second $line> $first : \t\t\textend
+            !endif
+        !endif
+    !endif
+!endfunction
+
+@enduml
