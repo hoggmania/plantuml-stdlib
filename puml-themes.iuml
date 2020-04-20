@@ -1,133 +1,146 @@
 @startuml
 
+
+!define STYLE_DEFAULT_WORK #ffffff
+!define STYLE_DEFAULT_WORK_LITE #LightBlue
+
+!define STYLE_DEFAULT_SCA #DarkGreen
+!define STYLE_DEFAULT_SCA_LITE #LightGreen
+
+!define STYLE_DEFAULT_EXTERNAL #Orange
+!define STYLE_DEFAULT_EXTERNAL_LITE #LightOrange
+
+!define STYLE_DEFAULT_BORDER #Black
+
+
+
 skinparam SequenceGroupBodyBackgroundColor transparent 
 skinparam ParticipantPadding 0
 skinparam BoxPadding 10
 skinparam shadowing false
 skinparam roundcorner 20
-skinparam BackgroundColor #ffffff
-skinparam ArrowColor #Black
+skinparam BackgroundColor STYLE_DEFAULT_WORK
+skinparam ArrowColor STYLE_DEFAULT_BORDER
 
 
 
 skinparam default {
-    BackgroundColor #ffffff
-    BackgroundColor<<SCA>> #LightGreen
-    BackgroundColor<<External>> #Orange
-    BorderColor #Black
+    BackgroundColor STYLE_DEFAULT_WORK_LITE
+    BackgroundColor<<SCA>> #STYLE_DEFAULT_SCA_LITE
+    BackgroundColor<<External>> #STYLE_DEFAULT_EXTERNAL_LITE
+    BorderColor STYLE_DEFAULT_BORDER
 }
 
 skinparam SequenceBox {
-    'BackgroundColor #LightBlue
-    BackgroundColor<<SCA>> #LightGreen
-    BackgroundColor<<External>> #LightOrange
-    BorderColor #Black
+    BackgroundColor STYLE_DEFAULT_WORK_LITE
+    BackgroundColor<<SCA>> #STYLE_DEFAULT_SCA_LITE
+    BackgroundColor<<External>> #STYLE_DEFAULT_EXTERNAL_LITE
+    BorderColor STYLE_DEFAULT_BORDER
 }
 
 skinparam Note {
     BackgroundColor #GOLD
-    BorderColor #Black
-    FontColor #Black
+    BorderColor STYLE_DEFAULT_BORDER
+    FontColor STYLE_DEFAULT_BORDER
 }
 
 skinparam Actor {
-    BackgroundColor #ffffff
-    BackgroundColor<<SCA>> #LightGreen
-    BackgroundColor<<External>> #LightOrange
-    BorderColor #Black
+    BackgroundColor STYLE_DEFAULT_WORK_LITE
+    BackgroundColor<<SCA>> #STYLE_DEFAULT_SCA_LITE
+    BackgroundColor<<External>> #STYLE_DEFAULT_EXTERNAL_LITE
+    BorderColor STYLE_DEFAULT_BORDER
 }
 
 skinparam Node {
-    BackgroundColor #ffffff
-    BackgroundColor<<SCA>> #LightGreen
-    BackgroundColor<<External>> #Orange
-
-    BorderColor #Black
+    BackgroundColor STYLE_DEFAULT_WORK_LITE
+    BackgroundColor<<SCA>> #STYLE_DEFAULT_SCA_LITE
+    BackgroundColor<<External>> #STYLE_DEFAULT_EXTERNAL_LITE
+    BorderColor STYLE_DEFAULT_BORDER
 }
 
 skinparam Component {
-    BackgroundColor #007ac9
-    BackgroundColor<<SCA>> #DarkGreen
-    BackgroundColor<<External>> #Orange
-    
-    BorderColor #Black
-    FontColor #ffffff
+    BackgroundColor STYLE_DEFAULT_WORK
+    BackgroundColor<<SCA>> #STYLE_DEFAULT_SCA
+    BackgroundColor<<External>> #STYLE_DEFAULT_EXTERNAL
+    BorderColor STYLE_DEFAULT_BORDER
+    FontColor STYLE_DEFAULT_WORK
 }
 
 skinparam  Activity {
-    BackgroundColor #007ac9
-    BackgroundColor<<SCA>> #LightGreen
-    BackgroundColor<<External>> #Orange
+    'BackgroundColor #007ac9
+    BackgroundColor STYLE_DEFAULT_WORK_LITE
+    BackgroundColor<<SCA>> #STYLE_DEFAULT_SCA_LITE
+    BackgroundColor<<External>> #STYLE_DEFAULT_EXTERNAL_LITE
 
-    DiamondBackgroundColor #007ac9
-    DiamondBackgroundColor<<SCA>> #LightGreen
-    DiamondBackgroundColor<<External>> #Orange
+    'DiamondBackgroundColor #007ac9
+    DiamondBackgroundColor STYLE_DEFAULT_WORK_LITE
+    DiamondBackgroundColor<<SCA>> #STYLE_DEFAULT_SCA_LITE
+    DiamondBackgroundColor<<External>> #STYLE_DEFAULT_EXTERNAL_LITE
 
-    BorderColor #Black
-    FontColor #ffffff
-    DiamondBorderColor  #Black
-    DiamondFontColor #ffffff
+    BorderColor STYLE_DEFAULT_BORDER
+    FontColor STYLE_DEFAULT_WORK
+    DiamondBorderColor  STYLE_DEFAULT_BORDER
+    DiamondFontColor STYLE_DEFAULT_WORK
 
 }
 
 skinparam Interface {
-    BackgroundColor #ffffff
-    BackgroundColor<<SCA>> #LightGreen
-    BackgroundColor<<External>> #Orange
-
-    BorderColor #Black
+    BackgroundColor STYLE_DEFAULT_WORK_LITE
+    BackgroundColor<<SCA>> #STYLE_DEFAULT_SCA_LITE
+    BackgroundColor<<External>> #STYLE_DEFAULT_EXTERNAL_LITE
+    BorderColor STYLE_DEFAULT_BORDER
 }
 skinparam Usecase {
-    BackgroundColor #ffffff
-    BorderColor #Black
+    BackgroundColor STYLE_DEFAULT_WORK_LITE
+    BackgroundColor<<SCA>> #STYLE_DEFAULT_SCA_LITE
+    BackgroundColor<<External>> #STYLE_DEFAULT_EXTERNAL_LITE
+    BorderColor STYLE_DEFAULT_BORDER
 }
 
 skinparam Rectangle {
-    BackgroundColor #ffffff
-    BackgroundColor<<SCA>> #LightGreen
-    BackgroundColor<<External>> #Orange
-
-    BorderColor #Black
+    BackgroundColor STYLE_DEFAULT_WORK_LITE
+    BackgroundColor<<SCA>> #STYLE_DEFAULT_SCA_LITE
+    BackgroundColor<<External>> #STYLE_DEFAULT_EXTERNAL_LITE
+    BorderColor STYLE_DEFAULT_BORDER
 }
 
 skinparam Partition {
-    BackgroundColor #LightBlue
-    BackgroundColor<<SCA>> #LightGreen
-    BackgroundColor<<External>> #Orange
-    
+    BackgroundColor STYLE_DEFAULT_WORK_LITE
+    BackgroundColor<<SCA>> #STYLE_DEFAULT_SCA_LITE
+    BackgroundColor<<External>> #STYLE_DEFAULT_EXTERNAL_LITE
 }
 skinparam Package {
-    BackgroundColor #ffffff
-    BackgroundColor<<SCA>> #LightGreen
-    BackgroundColor<<External>> #Orange
-
-    BorderColor #Black
+    BackgroundColor STYLE_DEFAULT_WORK_LITE
+    BackgroundColor<<SCA>> #STYLE_DEFAULT_SCA_LITE
+    BackgroundColor<<External>> #STYLE_DEFAULT_EXTERNAL_LITE
+    BorderColor STYLE_DEFAULT_BORDER
 }
 
 skinparam Queue {
-    BackgroundColor #ffffff
-    BorderColor #Black
+    BackgroundColor STYLE_DEFAULT_WORK_LITE
+    BackgroundColor<<SCA>> #STYLE_DEFAULT_SCA_LITE
+    BackgroundColor<<External>> #STYLE_DEFAULT_EXTERNAL_LITE
+    BorderColor STYLE_DEFAULT_BORDER
 }
 
 skinparam Database {
-    BackgroundColor #ffffff
-    BackgroundColor<<SCA>> #DarkGreen
-    BackgroundColor<<External>> #Orange
-
-    BorderColor #Black
+    BackgroundColor STYLE_DEFAULT_WORK_LITE
+    BackgroundColor<<SCA>> #STYLE_DEFAULT_SCA_LITE
+    BackgroundColor<<External>> #STYLE_DEFAULT_EXTERNAL_LITE
+    BorderColor STYLE_DEFAULT_BORDER
 }
 
 skinparam Participant {
-    BackgroundColor #007ac9
-    BackgroundColor<<SCA>> #DarkGreen
-    BackgroundColor<<External>> #Orange
+    BackgroundColor STYLE_DEFAULT_WORK_LITE
+    BackgroundColor<<SCA>> #STYLE_DEFAULT_SCA_LITE
+    BackgroundColor<<External>> #STYLE_DEFAULT_EXTERNAL_LITE
 
-    BorderColor #Black
-    FontColor #ffffff
+    BorderColor STYLE_DEFAULT_BORDER
+    FontColor STYLE_DEFAULT_WORK
 }
 
 skinparam Sequence {
-    LifeLineBorderColor #007ac9
+    'LifeLineBorderColor #007ac9
 }
 
 @enduml
