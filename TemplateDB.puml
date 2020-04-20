@@ -1,6 +1,6 @@
 @startuml TemplateDB
-!includesub TemplateBase.puml!BasicSettings
-!includesub TemplateBase.puml!CheckerCharacters
+!includesub ./TemplateBase.puml!BasicSettings
+!includesub ./TemplateBase.puml!CheckerCharacters
 
 setDirection(horizontal)
 setBackgroundColor(white)
