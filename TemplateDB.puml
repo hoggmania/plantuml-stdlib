@@ -1,8 +1,7 @@
 @startuml TemplateDB
 
 !define PUML https://raw.githubusercontent.com/hoggmania/plantuml-stdlib/master
-!includesub PUML/TemplateBase.puml!BasicSettings
-!includesub PUML/TemplateBase.puml!CheckerCharacters
+!include PUML/TemplateBase.puml
 
 setDirection(horizontal)
 setBackgroundColor(white)
